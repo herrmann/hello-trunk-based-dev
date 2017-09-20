@@ -5,7 +5,7 @@ public class GreeterTest {
 
 	@Test
 	public void newFeature() {
-		Assert.assertTrue(new NewGreeter().greeting().startsWith("Goodbye"));
+		Assert.assertTrue(new GreeterImpl().greeting().startsWith("Goodbye"));
 	}
 
 }

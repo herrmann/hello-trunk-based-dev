@@ -1,4 +1,4 @@
-public class NewGreeter implements Greeter {
+public class GreeterImpl implements Greeter {
 
 	@Override
 	public String greeting() {
