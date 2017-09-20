@@ -1,5 +1,5 @@
 public interface Greeter {
 
-	void greeting();
+	String greeting();
 
 }
