@@ -24,4 +24,11 @@ public class GreeterTest {
 		Assert.assertTrue(GreeterFactory.buildGreeter().greeting(null).contains("null"));
 	}
 
+	@Test
+	public void uppercaseDecorator() {
+		final Greeter greeter = new UppercaseGreeter(new GreeterImpl());
+		final String greeting = greeter.greeting("testing");
+		Assert.assertFalse(greeting.chars().anyMatch(c -> Character.isLowerCase(c)));
+	}
+
 }

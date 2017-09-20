@@ -11,4 +11,11 @@ public class AppConfig {
 		return SingletonHelper.INSTANCE;
 	}
 
+	public boolean enabled(final String feature) {
+		if ("uppercase".equals(feature)) {
+			return false;
+		}
+		return false;
+	}
+
 }
