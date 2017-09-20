@@ -11,8 +11,4 @@ public class AppConfig {
 		return SingletonHelper.INSTANCE;
 	}
 
-	public boolean useNewFeature() {
-		return true;
-	}
-
 }
