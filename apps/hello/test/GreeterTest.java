@@ -10,18 +10,18 @@ public class GreeterTest {
 
 	@Test
 	public void defaultName() {
-		Assert.assertTrue(GreeterFactory.buildGreeter().greeting().contains("world"));
+		Assert.assertTrue(GreeterFactory.buildGreeter().greeting().contains("WORLD"));
 	}
 
 	@Test
 	public void configurableName() {
 		final String name = "testing";
-		Assert.assertTrue(GreeterFactory.buildGreeter().greeting(name).contains(name));
+		Assert.assertTrue(GreeterFactory.buildGreeter().greeting(name).contains(name.toUpperCase()));
 	}
 
 	@Test
 	public void nullName() {
-		Assert.assertTrue(GreeterFactory.buildGreeter().greeting(null).contains("null"));
+		Assert.assertTrue(GreeterFactory.buildGreeter().greeting(null).contains("NULL"));
 	}
 
 	@Test
