@@ -1,7 +1,12 @@
 public class App {
 
 	public static void main(final String[] args) {
-		System.out.println("Hello, world!");
+		final boolean useNewFeature = false;
+		if (useNewFeature) {
+			System.out.println("Goodbye, world!");
+		} else {
+			System.out.println("Hello, world!");
+		}
 	}
 
 }
