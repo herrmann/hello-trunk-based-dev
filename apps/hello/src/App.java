@@ -2,11 +2,13 @@ public class App {
 
 	public static void main(final String[] args) {
 		final AppConfig config = new AppConfig();
+		Greeter greeter;
 		if (config.useNewFeature()) {
-			System.out.println("Goodbye, world!");
+			greeter = new NewGreeter();
 		} else {
-			System.out.println("Hello, world!");
+			greeter = new OldGreeter();
 		}
+		greeter.greeting();
 	}
 
 }
