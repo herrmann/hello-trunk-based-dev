@@ -1,4 +1,11 @@
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+import java.util.logging.Logger;
+
 public class AppConfig {
+
+	private static final Logger log = Logger.getLogger(AppConfig.class.getName());
 
 	private AppConfig() {
 	}
@@ -12,10 +19,19 @@ public class AppConfig {
 	}
 
 	public boolean enabled(final String feature) {
-		if ("uppercase".equals(feature)) {
-			return false;
+		final Properties props = new Properties();
+		final InputStream stream = this.getClass().getResourceAsStream("features.properties");
+		if (stream != null) {
+			try {
+				props.load(stream);
+			} catch (final IOException e) {
+				log.warning("Could not load feature flags configuration file: " + e.getMessage());
+			}
+		} else {
+			log.warning("No feature flags configuration file available");
 		}
-		return false;
+		final String value = props.getProperty(feature);
+		return Boolean.valueOf(value);
 	}
 
 }
